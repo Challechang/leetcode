@@ -1,6 +1,8 @@
 #include <iostream>
+#include "Solution.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    Solution *solution = new Solution();
+//    std::cout << solution->multiply("123", "456") << std::endl;
+    std::cout << solution->addStrings("123456789", "987654321") << std::endl;
 }

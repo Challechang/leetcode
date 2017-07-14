@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Administrator/CLionProjects/git/leetcode/Solution.cpp">
+			<Option target="leetcode"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/CLionProjects/git/leetcode/Solution.h">
+			<Option target="leetcode"/>
+		</Unit>
 		<Unit filename="C:/Users/Administrator/CLionProjects/git/leetcode/main.cpp">
 			<Option target="leetcode"/>
 		</Unit>

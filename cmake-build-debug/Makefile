@@ -122,6 +122,33 @@ leetcode/fast:
 	$(MAKE) -f CMakeFiles\leetcode.dir\build.make CMakeFiles/leetcode.dir/build
 .PHONY : leetcode/fast
 
+Solution.obj: Solution.cpp.obj
+
+.PHONY : Solution.obj
+
+# target to build an object file
+Solution.cpp.obj:
+	$(MAKE) -f CMakeFiles\leetcode.dir\build.make CMakeFiles/leetcode.dir/Solution.cpp.obj
+.PHONY : Solution.cpp.obj
+
+Solution.i: Solution.cpp.i
+
+.PHONY : Solution.i
+
+# target to preprocess a source file
+Solution.cpp.i:
+	$(MAKE) -f CMakeFiles\leetcode.dir\build.make CMakeFiles/leetcode.dir/Solution.cpp.i
+.PHONY : Solution.cpp.i
+
+Solution.s: Solution.cpp.s
+
+.PHONY : Solution.s
+
+# target to generate assembly for a file
+Solution.cpp.s:
+	$(MAKE) -f CMakeFiles\leetcode.dir\build.make CMakeFiles/leetcode.dir/Solution.cpp.s
+.PHONY : Solution.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -158,6 +185,9 @@ help:
 	@echo ... leetcode
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... Solution.obj
+	@echo ... Solution.i
+	@echo ... Solution.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
