@@ -116,3 +116,27 @@ bool Solution::hasCycle(ListNode *head) {
     }
     return false;
 }
+
+std::vector<std::vector<int>> Solution::generate(int numRows) {
+    std::vector< std::vector<int> > result;
+    for (int i = 1; i <= numRows; ++i) {
+        std::vector<int> line;
+        if (i == 1) {
+            line.push_back(1);
+        } else {
+            line.push_back(1);
+
+            int first = 1, last = i;
+            for (int j = first + 1; j < last; ++j) {
+                std::vector<int> pre_line = result.at(i - 2);
+                int num1 = pre_line.at(j - 2), num2 = pre_line.at(j - 1);
+                line.push_back(num1 + num2);
+            }
+
+            line.push_back(1);
+        }
+        result.push_back(line);
+    }
+
+    return result;
+}

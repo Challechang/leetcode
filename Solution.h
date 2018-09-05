@@ -6,6 +6,7 @@
 #define LEETCODE_SOLUTION_H
 
 #include <iostream>
+#include <vector>
 
 struct ListNode {
     int val;
@@ -23,6 +24,9 @@ public:
     bool hasCycle(ListNode *head);
     void swap(std::string &num1, std::string &num2);
     void reverse_str(std::string &str);
+
+    // 118. 杨辉三角
+    std::vector<std::vector<int>> generate(int numRows);
 };
 
 
