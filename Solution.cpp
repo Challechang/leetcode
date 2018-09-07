@@ -140,3 +140,42 @@ std::vector<std::vector<int>> Solution::generate(int numRows) {
 
     return result;
 }
+
+std::vector<int> Solution::getRow(int rowIndex) {
+    std::vector<int> line;
+
+    return line;
+
+}
+
+void Solution::merge(std::vector<int> &nums1, int m, std::vector<int> &nums2, int n) {
+    std::vector<int> result;
+    int i = 0, j = 0;
+    while (i < m && j < n) {
+        if (nums1.at(i) < nums2.at(j)) {
+            result.push_back(nums1.at(i));
+            i++;
+        } else {
+            result.push_back(nums2.at(j));
+            j++;
+        }
+    }
+
+    while (i < m) {
+        result.push_back(nums1.at(i));
+        i++;
+    }
+
+    while (j < n) {
+        result.push_back(nums2.at(j));
+        j++;
+    }
+    nums1.clear();
+    for (int k = 0; k < result.size(); ++k) {
+        nums1.push_back(result.at(k));
+    }
+}
+
+int Solution::thirdMax(std::vector<int> &nums) {
+
+}

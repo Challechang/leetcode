@@ -25,8 +25,13 @@ public:
     void swap(std::string &num1, std::string &num2);
     void reverse_str(std::string &str);
 
-    // 118. 杨辉三角
+    // 118. 杨辉三角I
     std::vector<std::vector<int>> generate(int numRows);
+    std::vector<int> getRow(int rowIndex);
+    // 88. 合并两个有序数组
+    void merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n);
+    // 414. 第三大的数
+    int thirdMax(std::vector<int>& nums);
 };
 
 
