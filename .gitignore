@@ -1,5 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
-/cmake-build-debug/
+cmake-build-debug/
 .idea/codeStyles/
 ### C++ template
 # Prerequisites

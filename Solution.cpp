@@ -142,9 +142,32 @@ std::vector<std::vector<int>> Solution::generate(int numRows) {
 }
 
 std::vector<int> Solution::getRow(int rowIndex) {
-    std::vector<int> line;
+    std::vector<int> next_line;
+    std::vector<int> pre_line;
+    pre_line.push_back(1);
+    next_line.push_back(1);
+    next_line.push_back(1);
+    if (rowIndex == 0) {
+        return pre_line;
+    }
 
-    return line;
+    if (rowIndex == 1) {
+        return next_line;
+    }
+
+    for (int i = 1; i < rowIndex; ++i) {
+        pre_line.clear();
+        std::copy(next_line.begin(), next_line.end(), std::back_inserter(pre_line));
+        next_line.clear();
+        next_line.push_back(1);
+
+        for (int j = 1; j < i + 1; ++j) {
+            next_line.push_back(pre_line.at(j) + pre_line.at(j - 1));
+        }
+        next_line.push_back(1);
+    }
+
+    return next_line;
 
 }
 
@@ -174,6 +197,60 @@ void Solution::merge(std::vector<int> &nums1, int m, std::vector<int> &nums2, in
     for (int k = 0; k < result.size(); ++k) {
         nums1.push_back(result.at(k));
     }
+}
+
+std::vector<std::vector<int>> Solution::transpose(std::vector<std::vector<int>>& A) {
+    std::vector<std::vector<int>> result;
+    if (A.size() == 0 || A.at(0).size() == 0) {
+        return result;
+    }
+    int result_cols = A.at(0).size();
+    for (int i = 0; i < result_cols; ++i) {
+        result.push_back(std::vector<int>());
+    }
+    for (int i = 0; i < A.size(); ++i) {
+        for (int j = 0; j < A.at(i).size(); ++j) {
+            result.at(j).push_back(A.at(i).at(j));
+        }
+    }
+
+    return result;
+}
+
+std::vector<std::vector<int>> Solution::matrixReshape(std::vector<std::vector<int>> &nums, int r, int c) {
+    if (nums.size() == 0 || nums.at(0).size() == 0) {
+        return nums;
+    }
+    int nums_rows = nums.size(), nums_cols = nums.at(0).size();
+    if ((nums_cols * nums_rows) != (r * c)) {
+        return nums;
+    }
+    std::vector<std::vector<int>> result;
+    for (int i = 0; i < r; ++i) {
+        result.emplace_back(std::vector<int>());
+    }
+    int result_rows_index = 0, result_cols_index = 0;
+    for (int i = 0; i < nums_rows; ++i) {
+        for (int j = 0; j < nums_cols; ++j) {
+            result.at(result_rows_index).emplace_back(nums.at(i).at(j));
+            result_cols_index++;
+            if (result_cols_index == c) {
+                result_rows_index++;
+                result_cols_index = 0;
+            }
+        }
+    }
+    return result;
+
+}
+
+bool Solution::isToeplitzMatrix(std::vector<std::vector<int>> &matrix) {
+
+}
+
+std::vector<std::vector<int>> Solution::subsets(std::vector<int> &nums) {
+    std::vector<std::vector<int>> result;
+
 }
 
 int Solution::thirdMax(std::vector<int> &nums) {

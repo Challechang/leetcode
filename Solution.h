@@ -27,9 +27,18 @@ public:
 
     // 118. 杨辉三角I
     std::vector<std::vector<int>> generate(int numRows);
+    // 119. 杨辉三角II
     std::vector<int> getRow(int rowIndex);
     // 88. 合并两个有序数组
     void merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n);
+    // 867. 转置矩阵
+    std::vector<std::vector<int>> transpose(std::vector<std::vector<int>>& A);
+    // 566. 重塑矩阵
+    std::vector<std::vector<int>> matrixReshape(std::vector<std::vector<int>>& nums, int r, int c);
+    // 766. 托普利茨矩阵
+    bool isToeplitzMatrix(std::vector<std::vector<int>>& matrix);
+    // 78. 子集
+    std::vector<std::vector<int>> subsets(std::vector<int>& nums);
     // 414. 第三大的数
     int thirdMax(std::vector<int>& nums);
 };
