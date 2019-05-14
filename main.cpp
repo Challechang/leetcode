@@ -26,16 +26,35 @@ int main() {
 //    for (int i = 0; i < 10; ++i) {
 //        solution->getRow(i);
 //    }
-    // 566. 重塑矩阵
-            std::vector<std::vector<int>> nums;
-            nums.emplace_back(std::vector<int>());
-            nums.emplace_back(std::vector<int>());
-            nums.at(0).emplace_back(1);
-            nums.at(0).emplace_back(2);
-            nums.at(1).emplace_back(3);
-            nums.at(1).emplace_back(4);
-            int r = 1, c = 4;
-            solution->matrixReshape(nums, r, c);
+//    // 566. 重塑矩阵
+//            std::vector<std::vector<int>> nums;
+//            nums.emplace_back(std::vector<int>());
+//            nums.emplace_back(std::vector<int>());
+//            nums.at(0).emplace_back(1);
+//            nums.at(0).emplace_back(2);
+//            nums.at(1).emplace_back(3);
+//            nums.at(1).emplace_back(4);
+//            int r = 1, c = 4;
+//            solution->matrixReshape(nums, r, c);
+    // 766. 托普利茨矩阵
+            std::vector<std::vector<int>> matrix;
+            matrix.emplace_back(std::vector<int>());
+            matrix.emplace_back(std::vector<int>());
+            matrix.emplace_back(std::vector<int>());
+            matrix.at(0).emplace_back(1);
+            matrix.at(0).emplace_back(2);
+            matrix.at(0).emplace_back(3);
+            matrix.at(0).emplace_back(4);
 
+            matrix.at(1).emplace_back(5);
+            matrix.at(1).emplace_back(1);
+            matrix.at(1).emplace_back(2);
+            matrix.at(1).emplace_back(3);
+
+            matrix.at(2).emplace_back(9);
+            matrix.at(2).emplace_back(5);
+            matrix.at(2).emplace_back(1);
+            matrix.at(2).emplace_back(2);
+            solution->isToeplitzMatrix(matrix);
     delete solution;
 }

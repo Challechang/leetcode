@@ -37,6 +37,8 @@ public:
     std::vector<std::vector<int>> matrixReshape(std::vector<std::vector<int>>& nums, int r, int c);
     // 766. 托普利茨矩阵
     bool isToeplitzMatrix(std::vector<std::vector<int>>& matrix);
+    // 283. 移动零
+    void moveZeroes(std::vector<int>& nums);
     // 78. 子集
     std::vector<std::vector<int>> subsets(std::vector<int>& nums);
     // 414. 第三大的数

@@ -245,7 +245,66 @@ std::vector<std::vector<int>> Solution::matrixReshape(std::vector<std::vector<in
 }
 
 bool Solution::isToeplitzMatrix(std::vector<std::vector<int>> &matrix) {
+    bool result = true;
+    int rows = matrix.size(), cols = matrix.at(0).size();
+    if (rows == 1 && cols == 1) {
+        return true;
+    }
 
+    if ((rows == 1 && cols > 1) || (rows > 1 && cols == 1)) {
+        return result;
+    }
+    int first_num, rows_index, cols_index;
+
+    for (int i = 1; i < rows; ++i) {
+        first_num = matrix.at(i).at(0);
+        rows_index = i;
+        cols_index = 0;
+        while (rows_index < rows && cols_index < cols) {
+            if (first_num != matrix.at(rows_index).at(cols_index)) {
+                return !result;
+            }
+            rows_index++;
+            cols_index++;
+        }
+    }
+
+    for (int i = 0; i < cols; ++i) {
+        first_num = matrix.at(0).at(i);
+        rows_index = 0;
+        cols_index = i;
+        while (rows_index < rows && cols_index < cols) {
+            if (first_num != matrix.at(rows_index).at(cols_index)) {
+                return !result;
+            }
+            rows_index++;
+            cols_index++;
+        }
+    }
+    return result;
+}
+
+void Solution::moveZeroes(std::vector<int> &nums) {
+    int nums_size = nums.size();
+    if (nums_size <= 1) {
+        return;
+    }
+
+    int index = nums_size - 1;
+
+    // filter zero which in the tail of array
+    for (; index >= 0 ; --index) {
+        if (nums[index] != 0) {
+            break;
+        }
+    }
+
+    for (; index >= 0 ; --index) {
+        if (nums[index] == 0) {
+            nums.erase(nums.begin() + index);
+            nums.emplace_back(0);
+        }
+    }
 }
 
 std::vector<std::vector<int>> Solution::subsets(std::vector<int> &nums) {
